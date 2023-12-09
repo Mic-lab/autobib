@@ -39,30 +39,23 @@ first_x.click()
 
 for site in SITES:
     sleep(0.5)
-
+    
     driver.find_elements(By.CLASS_NAME, 'mu-ripple-wrapper')[4].click()
-
     sleep(0.5)
-
+    
     search = driver.find_element(By.CLASS_NAME, 'rounded-l-sm')
     search.send_keys(site)
 
-##    sleep(1)
-
-    ##search_button = driver.find_elements(By.CLASS_NAME, 'material-icons')[34]
     for i in driver.find_elements(By.CLASS_NAME, 'material-icons')[::-1]:
         if i.text == 'search':
             search_button = i
             search_button.click()
             break
-
     sleep(2)
 
     site = driver.find_element(By.CLASS_NAME, 'flex.py-4.px-5.text-left.w-full')
     site.click()
-
     sleep(1)
-
 
     for i in range(2):
         no_element = driver.find_elements(By.CLASS_NAME, 'mu-flat-button.mu-flat-button-primary')
@@ -75,19 +68,5 @@ for site in SITES:
             sleep(1)
             break
 
-    
-##    for i in range(2):
-##        ripple_elems = driver.find_elements(By.CLASS_NAME, 'mu-ripple-wrapper')
-##        if len(ripple_elems) == 17:
-##            print(f'Click {i}')
-##            ripple_elems[15].click()
-##            sleep(0.5)
-##        else:
-##            break
-
     save_button = driver.find_elements(By.CLASS_NAME, "mu-raised-button.mu-raised-button-secondary.mu-raised-button-inverse")[1]
     save_button.click()
-
-
-##a = driver.find_elements(By.CLASS_NAME, 'mu-raised-button.mu-raised-button-secondary.mu-raised-button-inverse')
-##driver.find_elements(By.CLASS_NAME, 'mu-flat-button.mu-flat-button-primary')
